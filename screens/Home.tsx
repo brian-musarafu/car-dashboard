@@ -2,8 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import * as Progress from 'react-native-progress';
 import Statistic from '../components/Statistic';
-// import { CircleInformation } from 'grommet-icons';
-// import { motion } from 'framer-motion';
+import tw from 'twrnc';
 
 type Props = {}
 
@@ -29,7 +28,9 @@ const Home = (props: Props) => {
               </View>
             </View>
         </View>
-        <View className="right" style={styles.container_right}></View>
+        <View className="right" style={styles.container_right}>
+          <Text style={tw`text-gray-500`}>Testing tailwind</Text>
+        </View>
       </View>
     </View>
   )
