@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
     },
     figure:{
-        fontSize:20,
+        fontSize:30,
         color:'#fff',
         fontWeight:'800',
     },
