@@ -4,7 +4,8 @@ import * as Progress from 'react-native-progress';
 import tw from 'twrnc';
 import SpotifyPlayer from 'react-spotify-player';
 import Statistic from '../components/Statistic';
-import Icons from '../components/icons';
+import Icons from '../components/Icons';
+import { isLoaded, useFonts } from 'expo-font';
 
 
 const Home = () => {
@@ -12,6 +13,18 @@ const Home = () => {
     width: '100%',
     height: '100%',
   };
+  const [isLoaded]=useFonts({
+    Sfui:require('../assets/fonts/sfui-regular.ttf'),
+  })
+  if (!isLoaded){
+    return null;
+  }
+  if (isLoaded){
+    console.log("Font Loaded")
+  }
+  else{
+    console.log("Font Not Loaded")
+  }
   const view = 'coverart'; // or 'coverart'
   const theme = 'black'; // or 'white'
 
@@ -41,16 +54,16 @@ const Home = () => {
               {/* Status and accessories */}
               <View style={tw`flex-[0.5] text-left p-5 bg-gray-500 rounded-2xl`}>
                 <Text style={tw`text-white font-medium text-sm mb-5`}>Speed</Text>
-                <Text style={tw`text-white font-bold text-7xl mb-5 tracking-[-4px]`}>103</Text>
+                <Text style={tw`text-white font-bold font-Sfui text-7xl mb-5 tracking-[-4px]`}>103</Text>
                 <Text style={tw`text-white font-medium text-sm`}>km/h</Text>
               </View>
               {/* Status and accessories */}
               <View style={tw``}>
-                <View style={tw`flex-row`}>
+                <View style={tw`flex-[0.5]`}>
                   <Icons url='./assets/icons/abs.png'/>
-                  {/* <Icons url='./assets/icons/abs.png'/>
                   <Icons url='./assets/icons/abs.png'/>
-                  <Icons url='./assets/icons/abs.png'/> */}
+                  <Icons url='./assets/icons/abs.png'/>
+                  <Icons url='./assets/icons/abs.png'/>
                 </View>
               </View>
             </View>

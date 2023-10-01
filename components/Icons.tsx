@@ -8,12 +8,12 @@ type Props = {
 
 const Icons = (props: Props) => {
   return (
-    <View style={tw`h-50 w-50`}>
+    <View>
       <Image
         source={{
           uri:props.url,
         }}
-        // style={tw`object-cover w-[10px] h-[200px]`}
+        style={tw`object-cover w-[50px] h-[50px]`}
         />
     </View>
   )
